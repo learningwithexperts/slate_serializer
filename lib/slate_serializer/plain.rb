@@ -60,7 +60,7 @@ module SlateSerializer
       def serialize_node(node, options)
         if node[:text]
           node[:text]
-        else
+        elsif node[:children]
           node[:children].map { |n| serialize_node(n, options) }.join(options[:delimiter])          
         end
       end
